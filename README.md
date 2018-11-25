@@ -1,8 +1,13 @@
 # glasses_detection
 
 ## Requirements
-* Keras
-* Python 3.6
+* keras
+* python 3.6
+* opencv 
+* dlib 
+* numpy
+* albumentations
+* sklearn
 
 ## Usage
 ### 1. Download dataset here
