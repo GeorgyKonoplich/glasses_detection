@@ -11,6 +11,7 @@
 
 ## Usage
 ### 1. Download preprocessed celebA dataset [here](https://drive.google.com/file/d/1tCNojxRwQWWdS8oKM1tQI0T-wZTFljzc/view)
+Dataset structure in project directory:
 ```
 ├── dataset
    └── with_glasses
