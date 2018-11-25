@@ -35,8 +35,6 @@ def prepare_data():
     dir2 = 'without_glasses'
     X_with = glob('./dataset/{}/*.jpg'.format(dir1))
     X_without = glob('./dataset/{}/*.jpg'.format(dir2))
-    #X_with = X_with[:1000]
-    #X_without = X_without[:1000]
     X = np.array(X_with + X_without)
     y = np.array([1] * len(X_with) + [0] * len(X_without))
     return X, y
@@ -53,7 +51,7 @@ def get_callbacks(name_weights):
 
 def save_model_architecture(model, args):
     model_json = model.to_json()
-    with open(args.model_folder + '/' + args.model + '.json', "w") as json_file:
+    with open(args.model_folder + '/' + args.model_name + '.json', "w") as json_file:
         json_file.write(model_json)
 
 def train(args):
@@ -73,7 +71,7 @@ def train(args):
             y_test_cv = y[val_idx]
             train_generator = load_data_generator(X_train_cv, y_train_cv, batch_size=args.batch_size)
             test_generator = load_data_generator(X_test_cv, y_test_cv, batch_size=args.batch_size)
-            callbacks = get_callbacks(name_weights=args.model_folder + '/' +  args.model+'_weigths.h5')
+            callbacks = get_callbacks(name_weights=args.model_folder + '/' +  args.model_name+'_weigths.h5')
             model.fit_generator(
                 generator=train_generator,
                 steps_per_epoch=int(X_train_cv.shape[0] / args.batch_size),
@@ -100,7 +98,7 @@ def train(args):
 
         train_generator = load_data_generator(X_train, y_train, batch_size=args.batch_size)
         test_generator = load_data_generator(X_test, y_test, batch_size=args.batch_size)
-        callbacks = get_callbacks(name_weights=args.model_folder + '/' + args.model + '_weigths.h5')
+        callbacks = get_callbacks(name_weights=args.model_folder + '/' + args.model_name + '_weigths.h5')
         model.fit_generator(
             generator=train_generator,
             steps_per_epoch=int(X_train.shape[0] / args.batch_size),
