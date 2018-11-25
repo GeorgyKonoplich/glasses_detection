@@ -11,7 +11,7 @@
 * sklearn
 
 ## Usage
-### 1. Download preprocessed celebA dataset [here](https://drive.google.com/file/d/1tCNojxRwQWWdS8oKM1tQI0T-wZTFljzc/view)
+### 1. Download preprocessed celebA dataset [here](https://drive.google.com/file/d/1L2YWBet5gBGCcRf0GUPiTtNNt8nczXgE/view?usp=sharing)
 Dataset structure in project directory:
 ```
 ├── dataset
