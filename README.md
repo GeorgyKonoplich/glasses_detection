@@ -1,4 +1,4 @@
-# glasses_detection
+# Glasses Detection
 
 ## Requirements
 * keras
